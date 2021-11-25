@@ -1,23 +1,40 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<time.h>
+#define SIZE 7
 
-double Power(double X, int n);
+void printArray(const int a[][3]);
 
 int main(void)
 {
-	int k; double Ans;
-	printf("計算3.5的k次方?請輸入k=");
-	scanf_s("%d", &k);
-	Ans = Power(3.5, k);
-	printf("3.5的%d次方=%f\n", k, Ans);
+	int array1[2][3] = { {1,2,3},{4,5,6} };
+	int array2[2][3] = { 1,2,3,4,5 };
+	int array3[2][3] = { {1,2},{4} };
+
+	printf("Values in array1 by row are : \n");
+	printArray(array1);
+
+	printf("Values in array2 by row are : \n");
+	printArray(array2);
+
+	printf("Values in array3 by row are : \n");
+	printArray(array3);
+
 	system("pause");
 	return 0;
 }
 
-double Power(double X, int n)
+void printArray(const int a[][3])
 {
-	int i; double PowerXn = 1;
-	for (i = 1; i <= n; i++)
-		PowerXn *= X;
-	return PowerXn;
+	int i;
+	int j;
+
+	for (i = 0; i <= 1; i++)
+	{
+		for (j = 0; j <= 2; j++)
+		{
+			printf("%d ", a[i][j]);
+		}
+		printf("\n");
+	}
 }
